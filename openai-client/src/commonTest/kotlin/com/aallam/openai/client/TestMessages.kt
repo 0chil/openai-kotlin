@@ -5,6 +5,7 @@ import com.aallam.openai.api.core.PaginatedList
 import com.aallam.openai.api.core.Role
 import com.aallam.openai.api.message.Message
 import com.aallam.openai.api.message.MessageContent
+import com.aallam.openai.api.message.TextOnlyContent
 import com.aallam.openai.api.message.messageRequest
 import com.aallam.openai.client.internal.JsonLenient
 import kotlin.test.Test
@@ -17,7 +18,7 @@ class TestMessages : TestOpenAI() {
         val thread = openAI.thread()
         val messageRequest = messageRequest {
             role = Role.User
-            content = TextContent("How does AI work? Explain it in simple terms.")
+            content = TextOnlyContent("How does AI work? Explain it in simple terms.")
         }
         val message = openAI.message(threadId = thread.id, request = messageRequest)
         assertEquals(thread.id, message.threadId)

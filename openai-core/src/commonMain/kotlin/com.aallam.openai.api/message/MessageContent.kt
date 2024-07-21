@@ -38,6 +38,18 @@ public sealed interface MessageContent {
         @SerialName("image_file") val imageFile: ImageFile
     ) : MessageContent
 
+    /**
+     * References an image File in the content of a message.
+     */
+    @BetaOpenAI
+    @Serializable
+    @SerialName("image_url")
+    public data class ImageUrl(
+        /**
+         * The File ID of the image in the message content.
+         */
+        @SerialName("image_url") val imageUrl: com.aallam.openai.api.message.ImageUrl
+    ) : MessageContent
 }
 
 /**
