@@ -2,6 +2,7 @@ package com.aallam.openai.client
 
 import com.aallam.openai.api.assistant.AssistantTool
 import com.aallam.openai.api.assistant.assistantRequest
+import com.aallam.openai.api.chat.TextContent
 import com.aallam.openai.api.core.PaginatedList
 import com.aallam.openai.api.core.Role
 import com.aallam.openai.api.message.MessageRequest
@@ -32,7 +33,7 @@ class TestRuns : TestOpenAI() {
             threadId = thread.id,
             request = MessageRequest(
                 role = Role.User,
-                content = "solve me 1 + 1",
+                content = TextContent("solve me 1 + 1"),
                 metadata = mapOf(),
             ),
             requestOptions = null,

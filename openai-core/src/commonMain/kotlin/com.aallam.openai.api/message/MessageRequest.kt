@@ -19,7 +19,7 @@ public class MessageRequest(
     /**
      * The content of the message.
      */
-    @SerialName("content") public val content: String,
+    @SerialName("content") public val content: Content,
 
     /**
      * A list of files attached to the message.
@@ -54,7 +54,7 @@ public class MessageRequestBuilder {
     /**
      * The content of the message.
      */
-    public var content: String? = null
+    public var content: Content? = null
 
     /**
      * A list of files attached to the message.
