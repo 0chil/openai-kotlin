@@ -1,6 +1,8 @@
 package com.aallam.openai.api.thread
 
 import com.aallam.openai.api.BetaOpenAI
+import com.aallam.openai.api.chat.Content
+import com.aallam.openai.api.chat.ContentPart
 import com.aallam.openai.api.core.Role
 import com.aallam.openai.api.file.FileId
 import kotlinx.serialization.SerialName
@@ -21,7 +23,7 @@ public data class ThreadMessage(
     /**
      * The content of the message.
      */
-    @SerialName("content") public val content: String,
+    @SerialName("content") public val content: Content,
 
     /**
      * A list of File IDs that the message should use.
@@ -50,7 +52,7 @@ public class ThreadMessageBuilder {
     /**
      * The content of the message.
      */
-    public var content: String? = null
+    public var content: Content? = null
 
     /**
      * A list of File IDs that the message should use.

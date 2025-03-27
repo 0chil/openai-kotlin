@@ -1,6 +1,8 @@
 package com.aallam.openai.api.message
 
 import com.aallam.openai.api.BetaOpenAI
+import com.aallam.openai.api.chat.Content
+import com.aallam.openai.api.chat.ContentPart
 import com.aallam.openai.api.core.Role
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -19,7 +21,7 @@ public class MessageRequest(
     /**
      * The content of the message.
      */
-    @SerialName("content") public val content: String,
+    @SerialName("content") public val content: Content,
 
     /**
      * A list of files attached to the message.
@@ -54,7 +56,7 @@ public class MessageRequestBuilder {
     /**
      * The content of the message.
      */
-    public var content: String? = null
+    public var content: Content? = null
 
     /**
      * A list of files attached to the message.
